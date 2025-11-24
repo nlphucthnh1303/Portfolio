@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dual-Persona Portfolio</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <style>
+    /* Custom styles for themes and animations */
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;700;900&display=swap');
+
+    .web-dev-theme {
+      --primary-color: #7c3aed; /* purple-600 */
+      --secondary-color: #a855f7; /* purple-500 */
+      --text-color: #1a1a1a;
+      --bg-color: #ffffff;
+      --card-bg: #f9fafb; /* gray-50 */
+      --card-border: #e5e7eb; /* gray-200 */
+      font-family: 'Geist Sans', sans-serif;
+    }
+
+    .data-analyst-theme {
+      --primary-color: #2563eb; /* blue-600 */
+      --secondary-color: #3b82f6; /* blue-500 */
+      --text-color: #1f2937; /* gray-800 */
+      --bg-color: #f9fafb; /* gray-50 */
+      --card-bg: rgba(255, 255, 255, 0.5);
+      --card-border: rgba(255, 255, 255, 0.7);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+
+    .fade-out {
+      animation: fadeOut 0.6s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    .animated-content > * {
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-slide-in-up {
+      animation: slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0; /* Start hidden */
+    }
+
+    /* Animation for timeline items */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      opacity: 0; /* Start hidden */
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^21.0.0?external=rxjs",
+    "@angular/compiler": "https://next.esm.sh/@angular/compiler@^21.0.0?external=rxjs",
+    "@angular/core": "https://next.esm.sh/@angular/core@^21.0.0?external=rxjs"
+  }
+}
+</script>
+</head>
+<body class="bg-white transition-colors duration-500">
+  <app-root></app-root>
+</body>
+</html>

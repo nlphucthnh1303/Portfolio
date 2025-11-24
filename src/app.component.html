@@ -1,0 +1,19 @@
+<div class="fixed inset-0 -z-20 bg-[var(--bg-color)] transition-colors duration-500"></div>
+
+@if (isWebDev()) {
+  <app-matrix-rain class="fixed top-0 left-0 h-full w-16 opacity-30 -z-10"></app-matrix-rain>
+  <app-matrix-rain class="fixed top-0 right-0 h-full w-16 opacity-30 -z-10"></app-matrix-rain>
+}
+
+<app-header />
+
+<main class="relative z-10 container mx-auto px-4 md:px-8 text-[var(--text-color)] transition-colors duration-500">
+  <app-hero />
+  <app-projects />
+  <div class="grid grid-cols-1 gap-12 my-24">
+    <app-experience />
+    <app-skills />
+  </div>
+</main>
+
+<app-floating-switch />

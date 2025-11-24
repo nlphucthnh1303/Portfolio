@@ -1,0 +1,23 @@
+<section id="experience">
+  <h2 class="text-3xl font-bold mb-2">Experience</h2>
+  <h3 class="text-xl text-gray-500 mb-12">Professional Experience</h3>
+
+  <div class="relative border-l-2 border-[var(--primary-color)]/30 ml-4 pl-8 space-y-12">
+    @for (job of experience(); track job.company; let i = $index) {
+      <div class="animate-slide-in-left" [style.animation-delay]="i * 150 + 'ms'">
+        <div class="absolute -left-5 top-1 w-8 h-8 rounded-full bg-[var(--primary-color)] border-4 border-white dark:border-gray-900 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <div class="p-1 px-3 inline-block rounded-full bg-[var(--primary-color)]/20 text-[var(--primary-color)] text-sm font-semibold mb-2">
+            {{ job.period }}
+        </div>
+        <h4 class="text-lg font-bold">{{ job.role }} at {{ job.company }}</h4>
+        <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1">
+          @for (point of job.points; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

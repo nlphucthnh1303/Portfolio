@@ -1,0 +1,13 @@
+<button (click)="toggle()" 
+        class="fixed bottom-8 right-8 w-16 h-16 rounded-full text-white bg-[var(--primary-color)] flex items-center justify-center shadow-lg hover:bg-[var(--secondary-color)] transition-all duration-300 transform hover:scale-110 z-50">
+  <div class="relative w-8 h-8">
+    <div [class.rotate-90]="isWebDev()" [class.opacity-0]="isWebDev()" class="absolute inset-0 transition-all duration-500">
+        <!-- Data Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="m4 18 4-4 4 4 8-8"/></svg>
+    </div>
+    <div [class.rotate-0]="isWebDev()" [class.-rotate-90]="!isWebDev()" [class.opacity-100]="isWebDev()" [class.opacity-0]="!isWebDev()" class="absolute inset-0 transition-all duration-500">
+        <!-- Code Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    </div>
+  </div>
+</button>

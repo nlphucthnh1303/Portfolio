@@ -1,0 +1,20 @@
+<header class="sticky top-0 z-50 py-4 bg-[var(--bg-color)]/80 backdrop-blur-sm">
+  <nav class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+    <div class="text-xl font-bold text-[var(--text-color)]">
+      <div class="animated-content">
+        @if (isWebDev()) {
+          <span>ALEX CHEN - WEB DEV</span>
+        } @else {
+          <span>ALEX CHEN</span>
+        }
+      </div>
+    </div>
+    <ul class="hidden md:flex items-center space-x-8">
+      @for (link of navLinks; track link) {
+        <li>
+          <a href="#" class="text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors font-medium">{{ link }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>

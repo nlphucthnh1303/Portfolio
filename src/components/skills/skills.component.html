@@ -1,0 +1,16 @@
+<section id="skills">
+    <h2 class="text-3xl font-bold mb-2">Skills</h2>
+    <h3 class="text-xl text-gray-500 mb-12">Technical Skills</h3>
+
+    <div class="grid grid-cols-2 gap-4">
+        @for(skill of skills(); track skill.name; let i = $index) {
+            <div 
+              class="flex items-center space-x-4 p-4 rounded-xl border transition-all duration-300 transform hover:scale-105 hover:border-[var(--primary-color)] hover:shadow-lg bg-[var(--card-bg)] border-[var(--card-border)] animate-slide-in-up"
+              [class.backdrop-blur-md]="!isWebDev()"
+              [style.animation-delay]="i * 100 + 'ms'">
+                <div [innerHTML]="sanitizeIcon(skill.icon)"></div>
+                <span class="font-semibold">{{ skill.name }}</span>
+            </div>
+        }
+    </div>
+</section>
